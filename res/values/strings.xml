@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ZXingSimple</string>
+    <string name="desc_image">QRCode</string>
+    <string name="et_default">http://www.douban.com/</string>
+    <string name="btn_scan_qrcode">Scan QRCode</string>
+    <string name="btn_generate">Generate</string>
+    <string name="msg_encode_contents_failed">Could not encode a barcode from the data provided.</string>
+
+    <skip />
+
+    <string name="btn_ok">OK</string>
+    <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
+    <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+
+    <skip />
+
+    <string name="contents_contact">Contact info</string>
+    <string name="contents_email">Email address</string>
+    <string name="contents_location">Geographic coordinates</string>
+    <string name="contents_phone">Phone number</string>
+    <string name="contents_sms">SMS address</string>
+    <string name="contents_text">Plain text</string>
+
+</resources>
