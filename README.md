@@ -16,12 +16,32 @@ intent.putExtra(Intents.Scan.HEIGHT, 300);*/
 startActivityForResult(intent, REQ_CAPTURE);
 ```
 
+```
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == REQ_CAPTURE) {
+        if (resultCode == RESULT_OK) {
+            String result = data.getStringExtra(Intents.Scan.RESULT);
+            ParsedResultType type = ParsedResultType.values()[data.getIntExtra(
+                    Intents.Scan.RESULT_TYPE, ParsedResultType.TEXT.ordinal())];
+            String format = data.getStringExtra(Intents.Scan.RESULT_FORMAT);
+            byte[] rawBytes = data.getByteArrayExtra(Intents.Scan.RESULT_BYTES);
+
+            Bitmap bm = BitmapFactory.decodeByteArray(rawBytes, 0, rawBytes.length);
+            // TODO
+        }
+    } else {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+}
+```
+
 Generate
 --------
 
 ```
 Intent intent = new Intent(Intents.Encode.ACTION);
-intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE);
+intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE.toString());
 /** Contents.Type comments for details */
 intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
 intent.putExtra(Intents.Encode.DATA, text);

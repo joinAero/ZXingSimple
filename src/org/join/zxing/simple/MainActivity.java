@@ -92,7 +92,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private void generateQRCode(String text, int dimension) {
         Intent intent = new Intent(Intents.Encode.ACTION);
-        intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE);
+        intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE.toString());
         /** Contents.Type comments for details */
         intent.putExtra(Intents.Encode.TYPE, parseContentsType(text));
         intent.putExtra(Intents.Encode.DATA, text);
